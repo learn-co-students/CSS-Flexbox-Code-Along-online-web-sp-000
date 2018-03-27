@@ -61,7 +61,7 @@ However, we've got a small issue.. it doesn't make much sense to have a
 `<header>` on the left, and a `<footer>` on the right; they should be on the
 top and bottom of our page. We'll need to add one more line of CSS for this, `flex-direction`.
 
-#### flex-direction
+#### `flex-direction`
 
 By default, flexbox will display content horizontally. If we want to change
 this, we'll need to define a direction. In `.flex-container`, add the following
@@ -111,7 +111,7 @@ the _parent container_ and applying to all of its children.
 Now that we've set up a basic layout using flexbox, we can go deeper into some
 of its cool properties.
 
-#### flex-wrap
+#### `flex-wrap`
 
 Let's say we want to display a series of items in the `<main>` section of our
 page. Make six opening and closing `<div>` elements inside of `<main>` and
@@ -140,7 +140,7 @@ Let's add in the previous property we discussed, `flex-direction`. If you add `f
 items, but instead of in a new line underneath, the items will appear in a new
 _column_ to the right of the first.
 
-#### flex-flow
+#### `flex-flow`
 
 In our `main` CSS block, we've now got `flex-direction` and `flex-wrap`
 defined. These two properties often go hand in hand when working with flexbox,
@@ -203,7 +203,7 @@ If you change `flex-flow` back to `column wrap`, the flex elements will act the
 same way, _only vertically_, so `justify-content` will apply based on the
 `flex-direction` you've defined.
 
-#### align-items
+#### `align-items`
 
 ![Dan Abramov center div vertically](images/dan-abramov-css.png "Centering a Div Vertically")
 
@@ -262,7 +262,7 @@ justify-content: center;
 align-items: center;
 ```
 
-#### align-content
+#### `align-content`
 
 The `align-content` property defines how multiple rows of elements will be
 displayed. The effects of `align-content` will not apply if `nowrap` is
@@ -290,7 +290,7 @@ So, we've gotten pretty far with flexbox just by defining properties on the
 container, but we can go even further by setting CSS properties within the
 children of the container.
 
-#### flex-basis
+#### `flex-basis`
 
 So far, we've been setting the size of our child elements in a flex container
 by using the `width` and `height` properties. We can achieve the same effect
@@ -310,7 +310,7 @@ use, allowing us to handle sizing in different ways:
   `width` or `height` properties if they are defined. Otherwise, the element
   will be sized based on the content inside the element.
 
-#### flex-grow
+#### `flex-grow`
 
 The `flex-grow` property specifies how much space the element should take up
 within a flex container. By default, `flex-grow` is equal to `0`, meaning
@@ -351,7 +351,7 @@ size to fill any empty space, so if one green box is on a new line, it fills
 If no divs have a set width, but have `flex-grow` set greater than `0`,
 elements _will not_ wrap, instead, shrinking to fit all into one row.
 
-#### flex-shrink
+#### `flex-shrink`
 
 The `flex-shrink` determines how much an element in a flex container will
 shrink; the larger the number, the more the element will shrink in relation to
@@ -371,7 +371,7 @@ now cause the `<footer>` to shrink much more than before until it disappears
 entirely. Setting `flex-shrink` to `3` causes the `<footer>` to shrink _3_
 times as much as normal.
 
-#### flex
+#### `flex`
 
 Using `flex-grow`, `flex-shrink`, and `flex-basis` in combination allows us to:
 one, set how much that element expands to fill space, two, set how much the
@@ -402,7 +402,7 @@ It is recommended that you use `flex` over the individual `grow`, `shrink` and
 they aren't provided, it is less prone to buggy behavior. Try assigning our
 green boxes different values for `flex` to see how they work.
 
-#### align-self
+#### `align-self`
 
 Flexbox offers a way for us to change individual element positions, in the
 event that we want one or more elements in a flex container to be positioned
@@ -412,7 +412,7 @@ we take a look at it in browser, we will see that while that green box will
 remain in order relative to other boxes, it will appear at the bottom of the
 flex container, while all others remain at the top.
 
-#### order
+#### `order`
 
 Flexbox has one property which is slightly different than the rest: `order`.  
 The `order` takes in a positive or negative number value, and will cause flex
