@@ -101,10 +101,10 @@ Refresh the page and you'll see the effect: Our white `<main>` section takes up
 the majority of the page, and if you shrink the height of your browser window,
 the height of `<main>` will change significantly. Our `<header>` and `<footer>`
 sections will still adjust in height a little, but we'll take a look at that
-later on. Previously, to create this sort of layout, we would have added the
-`position` property to the individual `<header>` and `<footer>` elements, but
-with flexbox, besides height and width, the properties are being assigned to
-the _parent container_ and applying to all of its children.
+preventing that later on. Previously, to create this sort of layout, we would
+have added the `position` property to the individual `<header>` and `<footer>`
+elements, but with flexbox, besides height and width, the properties are being
+assigned to the _parent container_ and applying to all of its children.
 
 Now that we've set up a basic layout using flexbox, we can go deeper into some
 of its cool properties.
@@ -113,13 +113,41 @@ of its cool properties.
 
 Let's say we want to display a series of items in the `<main>` section of our
 page. Make six opening and closing `<div>` elements inside of `<main>` and
-assign them a class name 'item'. Then in our CSS file, define a block for
-`.item` with `height` and `width` set to `100px`, `margin` set to `5px`, and `background-color` set to `green`. Now, in the `main` CSS block, set `display`
-to `flex`.
+assign them a class name 'item', adding the number 1 through 6 in them, like so:
+
+```
+<div class="item">1</div>
+<div class="item">2</div>
+<div class="item">3</div>
+<div class="item">4</div>
+<div class="item">5</div>
+<div class="item">6</div>
+```
+
+In our CSS file, define a block for `.item` with `height` and `width` set to
+`100px`, `margin` set to `5px`, and `background-color` set to `green`. Now, in
+the `main` CSS block, set `display` to `flex`. The two classes should look like
+the following:
+
+```
+main {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: green;
+}
+```
 
 Refresh and you should see six green boxes horizontally aligned. If you reduce
 the width of your browser window, these boxes will evenly shrink to fit. Go
-back into `index.css`, and in `main`, add the following line:
+back into `index.css`, and in `.main`, add the following line:
 
 ```
 flex-wrap: wrap;
@@ -134,17 +162,17 @@ can also try changing `flex-wrap` to `wrap-reverse`, which will act similar to
 `wrap`, except from the _bottom and up_, instead of top and down. We'll keep
 the property set to `wrap` for now, though.
 
-Let's add in the previous property we discussed, `flex-direction`. If you add `flex-direction: column` to the `main` CSS block, flexbox will still _wrap_
+Let's add in the previous property we discussed, `flex-direction`. If you add
+`flex-direction: column` to the `main` CSS block, flexbox will still _wrap_
 items, but instead of in a new line underneath, the items will appear in a new
 _column_ to the right of the first.
 
 #### `flex-flow`
 
-In our `main` CSS block, we've now got `flex-direction` and `flex-wrap`
-defined. These two properties often go hand in hand when working with flexbox,
-so CSS provides a shorthand property that defines both in one line:
-`flex-flow`. To implement this, in `main` replace `flex-direction` and
-`flex-wrap` with the following:
+In our `.main` CSS block, we've now got `flex-direction` and `flex-wrap`
+defined. These two properties often go hand in hand, so CSS provides a
+shorthand property that defines both in one line: `flex-flow`. To implement
+this, in `.main` replace `flex-direction` and `flex-wrap` with the following:
 
 ```
 flex-flow: column wrap;
@@ -155,9 +183,9 @@ second for wrapping. If you only include one setting, the other will be set to
 its default, `row` or `nowrap`.
 
 Again, notice we've only defined flex properties in the parent element,
-`<main>`. We're effectively letting our browser decide how to handle the
-positioning of the child divs with this one line of CSS for the parent. For the
-next section, switch the direction back to `row` (so, either
+using `.main`. We're effectively letting our browser decide how to handle the
+positioning of the child divs with these two lines of CSS for the parent. For
+the next section, switch the direction back to `row` (so, either
 `flex-flow: row wrap;`, or just `flex-flow: wrap;`)
 
 #### justify-content
@@ -175,7 +203,7 @@ Now, our six green boxes are centered together on the page. Wrapping will still
 apply here, so if the page shrinks enough, some of the boxes will spill over,
 but _remain centered on the next row_. Very cool! Getting HTML elements to
 behave this way _without_ flexbox is actually fairly difficult, but we've got
-it set up in just a few lines!
+it set up in short order.
 
 The `justify-content` property has a number of settings:
 
@@ -187,7 +215,7 @@ The `justify-content` property has a number of settings:
 * `flex-end` - aligns all elements to the end of the flex container. If you
   apply this setting, our green boxes will align to the right side of the screen.
   However, if the page shrinks, the last flex elements will still wrap to the
-  next row, so order is still preserved.
+  next row, so order is preserved.
 * `space-around` - adds space in between each flex element so they fill the
   space they are in, evenly dividing the row and centering each element in each
   division. This white space in between will shrink as the page shrinks, and
@@ -210,7 +238,7 @@ the React development team, one of the most popular JavaScript libraries for
 modern web development.
 
 Centering vertically is actually fairly non-intuitive using basic CSS. Flexbox
-provides a solution, though, in the `align-items` property. In the `main` CSS
+provides a solution, though, in the `align-items` property. In the `.main` CSS
 block, make sure `flex-flow` is set to `row wrap` once again, and then add the
 following line:
 
@@ -247,13 +275,14 @@ settings:
   element. If you tried out the `stretch` setting, make sure your
   `flex-direction` is set back to `row` and that both `height` and `width` are
   set to `100px` in the `.item` CSS block. Now, set `align-items` to `baseline`,
-  go to your `index.html` file and add a line of text in **one** of the divs
-  within `<main>`, save both the HTML and CSS, and check out the page in your
-  browser. Any div that is empty is aligned normally, but any div that has text
-  in it will align _based on the bottom of the text_.
+  go to your `index.html` file and remove some of the numbers that are
+  contained in our divs, leaving a few. Save both the HTML and CSS, and check
+  out the page in your browser. Any div that is now empty is aligned normally,
+  but any div that still has text in it will align _based on the bottom of the
+  text_.
 
-To perfectly center elements horizontally and vertically, we can use a
-combination of both `justify-content` and `align-items` like so:
+To perfectly center an element horizontally and vertically, with flex, we can
+use a combination of both `justify-content` and `align-items` like so:
 
 ```
 justify-content: center;
@@ -271,7 +300,7 @@ effects of wrapping.
 
 * `center` - centers all rows in the container. Combined with
   `align-items: center`, this will keep all items and rows grouped together,
-  instead of centering each row separately.
+  instead of centering each row independently.
 * `stretch` - similar to `align-items: stretch` when multiple rows are present.
 * `space-around` - centers elements vertically on each row (or horizontally on
   each column) the same way as if you only used `align-items: center`.
@@ -293,12 +322,15 @@ children of the container.
 So far, we've been setting the size of our child elements in a flex container
 by using the `width` and `height` properties. We can achieve the same effect
 using the `flex-basis` property, which determines the initial width of an
-element on the page. There are a few settings for `flex-basis` we can
-use, allowing us to handle sizing in different ways:
+element in a flex container. Width, in this case, refers to the length of an
+element in the `flex-direction` assigned, so if `flex-direction` is set to
+`column`, `flex-basis` affects the `height` of each element. There are a few
+settings for `flex-basis` we can use, allowing us to handle sizing in different
+ways:
 
-* `flex-basis: 100px;` - will give elements a set width of `100px`, if the container is
-  set to `row`, or a set height of `100px`, if the container is set to `column`.
-  Other units can be used here, such as `em`.
+* `flex-basis: 100px;` - will give elements an initial width of `100px`, if the
+  container is set to `row`, or an initial height of `100px`, if the container
+  is set to `column`. Other units can be used here, such as `em`.
 * `flex-basis: --%` - will set the element to a percentage of a container size.
   Setting `flex-basis` to 50% on one child element, for instance, will cause that
   child to take up half of a container row. Set to 100%, the child will fill the
