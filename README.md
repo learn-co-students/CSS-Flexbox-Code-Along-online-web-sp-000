@@ -27,10 +27,10 @@ opening it in a browser.
 
 In order to use flexbox properties, we must first define a container where we
 want flexbox to apply. In `index.html`, we've got a small amount of HTML in the
-`<body>`, a `<div>` with a class `flex-container` that has three child
+`<body>`: a `<div>` with a class `flex-container` that has three child
 elements, `<header>`, `<main>` and `<footer>`, which will act as our first flex
-container. In `index.css`, we've got some starter code too: background color,
-width and height are pre-defined for the `header`, `main`, and `footer`
+container. In `index.css`, we've got some starter code, too: `background-color`,
+`width` and `height` are pre-defined for the `header`, `main`, and `footer`
 elements.
 
 First, create a block in `index.css` called `.flex-container`, which will
@@ -70,8 +70,9 @@ flex-direction: column;
 ```
 
 Refresh `index.html` to see the change. This time, our blue `<header>` appears
-along the top of our page, with `<footer>` at the bottom! The `flex-direction`
-property has a few setting options:
+along the top of our page, with `<footer>` at the bottom! 
+
+The `flex-direction` property has a few setting options:
 
 * `row` - the default setting, organizes items from left to right
 * `column` - organizes items from top to bottom
@@ -93,18 +94,18 @@ container, which, in this case, is the height of our window.
 
 It probably makes more sense to set a specific height, as `<header>` will most
 often contain navigation and a website logo that we want to keep at a
-consistent size. Similarly, footers usually contains a small amount static
+consistent height. Similarly, footers usually contain a small amount static
 links and information, so let's go ahead and switch the height property in the
 `header` and `footer` CSS blocks to `80px`.
 
 Refresh the page and you'll see the effect: Our white `<main>` section takes up
 the majority of the page, and if you shrink the height of your browser window,
 the height of `<main>` will change significantly. Our `<header>` and `<footer>`
-sections will still adjust in height a little, but we'll take a look at that
+sections will still adjust in height a little, but we'll take a look at
 preventing that later on. Previously, to create this sort of layout, we would
 have added the `position` property to the individual `<header>` and `<footer>`
-elements, but with flexbox, besides height and width, the properties are being
-assigned to the _parent container_ and applying to all of its children.
+elements, but with flexbox, the position is being handled by the _parent
+container_, applying to all of its children.
 
 Now that we've set up a basic layout using flexbox, we can go deeper into some
 of its cool properties.
