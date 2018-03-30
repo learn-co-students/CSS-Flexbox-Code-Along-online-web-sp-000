@@ -1,14 +1,12 @@
 # Building a Responsive Layout with CSS Flexbox
 
-Using CSS to create a website that looks good to as many users as possible can,
-at times, be incredibly frustrating. Your webpage may look great on the screen
-you designed it on, but open the page up on a small laptop, and suddenly the
-page content is squeezed, spilling over, or pushed out of place. Open that same
-page on a larger monitor and you might have a ton of empty space. At the same
-time, some things that seem like they should be simple at first glance, such as
-perfectly centering a div vertically, turn out to be much more complicated.
+Using CSS to create a website that looks good to as many users as possible can
+be a challenge. Your webpage may look great on the screen you designed it on,
+but open the page up on a small laptop, and suddenly the page content is
+squeezed, spilling over, or pushed out of place. Open that same page on a
+larger monitor and you might have a ton of empty space.
 
-CSS, however, has some powerful solutions to this problem, and in this code
+CSS, however, has some powerful solutions for this, and in this code
 along, we will be discussing one of them: flexbox.
 
 Flexbox makes it possible to build page layouts that are dynamic. As the
