@@ -463,7 +463,7 @@ users who use assistive technology such as screen readers.
 ### Wrapping Up
 
 That covers all the properties of flexbox, but feel free to continue to
-practice with various propoerty settings. It is possible to use flexbox to
+practice with various settings. It is possible to use flexbox to
 create very unique page layouts, recreate some of the awesome modern layouts we
 see (i.g. the dynamic columns you see on [pinterest.com](pinterest.com)), or
 just add a little more responsiveness to make your site look good regardless of
