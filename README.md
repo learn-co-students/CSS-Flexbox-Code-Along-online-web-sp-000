@@ -404,8 +404,8 @@ times as much as normal.
 #### `flex`
 
 Using `flex-grow`, `flex-shrink`, and `flex-basis` in combination allows us to:
-one, set how much that element expands to fill space, two, set how much the
-element will shrink to fit, and three, how large the item is to start. These
+one, set how much that element expands to fill space; two, set how much the
+element will shrink to fit; and three, how large the item is to start. These
 three settings tend to go together, and because of this, CSS has provided a
 shorthand alternative to set all three: `flex`. The `flex` attribute can take
 three settings:
@@ -429,8 +429,8 @@ Alternatively, you can also use `auto`, `initial` and `none`:
 
 It is recommended that you use `flex` over the individual `grow`, `shrink` and
 `basis` properties. Since `flex` automatically handles some of the settings if
-they aren't provided, it is less prone to buggy behavior. Try assigning our
-green boxes different values for `flex` to see how they work.
+they aren't provided, it is less prone to conflicting behavior. Try assigning
+our green boxes different values for `flex` to see how they work.
 
 #### `align-self`
 
@@ -457,7 +457,7 @@ element, such as moving a submit button for ease of use, but on a computer
 screen, the button can stay in the original order it is written in the HTML.  
 We could accomplish this using `order` in conjunction with [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media).
 
-It should be noted that modifying the order of elements may unexpectedly affect
+It should be noted that modifying the order of elements may negatively affect
 users who use assistive technology such as screen readers.
 
 ### Wrapping Up
