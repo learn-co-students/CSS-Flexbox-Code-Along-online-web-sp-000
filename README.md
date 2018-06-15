@@ -14,7 +14,7 @@ designer of a web page, you can designate some parts of your page to
 automatically resize depending on window size, filling empty space in a way that
 you specify. It is also very useful for displaying columns or rows of items,
 keeping items evenly spaced regardless of their individual sizes, or allowing
-them to _wrap_ to a new line in a clean way.
+them to _wrap_ to a new line cleanly.
 
 In this lesson, we will discuss some of the common ways to use flexbox and the
 associated properties you can use while coding through some examples. Feel free
