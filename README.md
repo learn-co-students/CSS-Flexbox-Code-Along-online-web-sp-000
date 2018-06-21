@@ -422,6 +422,11 @@ using `order` in conjunction with [`@media`](https://developer.mozilla.org/en-US
 It should be noted that modifying the order of elements may negatively affect
 users who use assistive technology such as screen readers.
 
+## Moving On
+
+When you're ready to leave this lab, run learn from the command line. If the
+test pass, enter learn submit. You'll then be prompted to move on!
+
 ### Conclusion
 
 That covers all the properties of flexbox, but feel free to continue to practice
