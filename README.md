@@ -424,8 +424,8 @@ users who use assistive technology such as screen readers.
 
 ## Moving On
 
-When you're ready to leave this lab, run learn from the command line. If the
-test pass, enter learn submit. You'll then be prompted to move on!
+When you're ready to leave this lab, run `learn` from the command line. If the
+test pass, enter `learn submit`. You'll then be prompted to move on!
 
 ### Conclusion
 
