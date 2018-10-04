@@ -2,14 +2,14 @@
 ## Problem Statement 
 Using CSS to create a website that looks good to as many users as possible can
 be a challenge. Your webpage may look great on the screen you designed it on,
-but open the page up on a small laptop, and suddenly the page content is
-squeezed, spilling over, or pushed out of place. Open that same page on a larger
-monitor and you might have a ton of empty space.
+but if you open the page up on a small laptop, suddenly the page content is
+squeezed, spilling over, or pushed out of place. If you open that same page
+on a larger monitor, you might see excess empty space.
 
-CSS, however, has some powerful solutions for this, and in this lesson, we will
+However, CSS has some powerful solutions for this. In this lesson we will
 be discussing one of them: flexbox.
 
-Flexbox makes it possible to build page layouts that are dynamic. As the
+Flexbox makes it easier to build page layouts that are dynamic. As the
 designer of a web page, you can designate some parts of your page to
 automatically resize depending on window size, filling empty space in a way that
 you specify. It is also very useful for displaying columns or rows of items,
@@ -30,11 +30,12 @@ opening it in a browser.
 ## Setting Up a Flex Container
 
 In order to use flexbox properties, we must first define a container where we
-want flexbox to apply. In `index.html`, we've got a small amount of HTML in the
-`<body>`: a `<div>` with a class `flex-container` that has three child elements,
-`<header>`, `<main>` and `<footer>`, which will act as our first flex container.
-In `index.css`, we've got some starter code, too: `background-color`, `width`
-and `height` are pre-defined for the `header`, `main`, and `footer` elements.
+want flexbox to apply. In `index.html`, we've already defined some HTML in the
+`<body>`: a `<div>` element with a class of 'flex-container' that has three child
+elements called `<header>`, `<main>` and `<footer>`, which will act as our first
+flex container. In `index.css`, there's some starter code, too. We've set pre-defined
+attributes of `background-color`, `width` and `height` for the `header`, `main`,
+and `footer` elements.
 
 First, create a block in `index.css` called `.flex-container`, which will define
 CSS for our 'flex-container' class. To apply flexbox, we need to add `display:
@@ -60,9 +61,9 @@ page. If you resize your browser window, the three sections will stay evenly
 split, expanding and shrinking to fit. With just a little bit of CSS, we've
 already got some responsiveness!
 
-However, we've got a small issue.. it doesn't make much sense to have a
-`<header>` on the left, and a `<footer>` on the right; they should be on the top
-and bottom of our page. We'll need to add one more line of CSS for this,
+However, we've got a small issue--it doesn't make much sense to have a
+`<header>` on the left and a `<footer>` on the right; they should be on the top
+and bottom of our page. We'll need to add one more line of CSS for this using
 `flex-direction`.
 
 #### `flex-direction`
@@ -98,14 +99,13 @@ This time, our `<header>` is much shorter. More importantly, though, our
 remainder of the page. The height of our `<header>` is now 10% of the parent
 container, which, in this case, is the height of our window.
 
-It probably makes more sense to set a specific height, as `<header>` will most
+It likely makes more sense to set a specific height to `<header`>, as it will most
 often contain navigation and a website logo that we want to keep at a consistent
-height. Similarly, footers usually contain a small amount static links and
-information, so let's go ahead and switch the height property in the `header`
-and `footer` CSS blocks to `80px`.
+height. Similarly, footers usually contain static links and information, so we will
+set the height property in the `header` and `footer` CSS blocks to `80px`.
 
-Refresh the page and you'll see the effect: Our turquoise `<main>` section takes
-up the majority of the page, and if you shrink the height of your browser
+Refresh the page and you'll see the effect: The `<main>` section will display as
+turqoise and tke up the majority of the page. If you shrink the height of your browser
 window, the height of `<main>` will change significantly. Our `<header>` and
 `<footer>` sections will still adjust in height a little, but we'll take a look
 at preventing that later on. Previously, to create this sort of layout, we would
@@ -118,9 +118,9 @@ of its cool properties.
 
 #### `flex-wrap`
 
-Let's say we want to display a series of items in the `<main>` section of our
-page. Make six `<div>` elements inside of `<main>` and assign them a class name
-'item', adding the number 1 through 6 in them, like so:
+Let's display a series of items in the `<main>` section of our page. Make six
+`<div>` elements inside of `<main>` and assign them a class name 'item', adding
+the number 1 through 6 in them, like so:
 
 ```
 <div class="item">1</div>
@@ -152,7 +152,7 @@ main {
 }
 ```
 
-Refresh and you should see six pink boxes horizontally aligned. If you reduce
+If you refresh, you should see six pink boxes horizontally aligned. If you reduce
 the width of your browser window, these boxes will evenly shrink to fit. Go back
 into `index.css`, and in `.main`, add the following line:
 
@@ -176,10 +176,10 @@ _column_ to the right of the first.
 
 #### `flex-flow`
 
-In our `.main` CSS block, we've now got `flex-direction` and `flex-wrap`
+In our CSS block labeled `main`, we've now got `flex-direction` and `flex-wrap`
 defined. These two properties often go hand in hand, so CSS provides a shorthand
 property that defines both in one line: `flex-flow`. To implement this, in
-`.main` replace `flex-direction` and `flex-wrap` with the following:
+the block `main`, replace `flex-direction` and `flex-wrap` with the following:
 
 ```
 flex-flow: column wrap;
@@ -190,7 +190,7 @@ second for wrapping. If you only include one setting, the other will be set to
 its default, `row` or `nowrap`.
 
 Again, notice we've only defined flex properties in the parent element, using
-`.main`. We're effectively letting our browser decide how to handle the
+`main`. We're effectively letting our browser decide how to handle the
 positioning of the child divs with these two lines of CSS for the parent. For
 the next section, switch the direction back to `row` (so, either `flex-flow: row
 wrap;`, or just `flex-flow: wrap;`).
@@ -238,7 +238,7 @@ same way, _only vertically_, so `justify-content` will apply based on the
 #### `align-items`
 
 Centering vertically is actually fairly non-intuitive using basic CSS. Flexbox
-provides a solution, though, in the `align-items` property. In the `.main` CSS
+provides a solution, though, in the `align-items` property. In the `main` CSS
 block, make sure `flex-flow` is set to `row wrap` once again, and then add the
 following line: 
 ```
@@ -246,7 +246,7 @@ align-items: center;
 ```
 
 Save, then refresh your page in the browser and take a look. Now, our pink boxes
-are centered _vertically_ within our `<main>` element. If the window shrinks,
+are centered _vertically_ within our `<main>` container. If the window shrinks,
 the elements will wrap as expected, and each row will center within its own
 space. Now, go back to your `flex-flow` setting and change it from `row` to
 `column`. Our flex elements will now be centered _horizontally_. So, where
@@ -348,7 +348,7 @@ _will not_ wrap, instead, shrinking to fit all into one row.
 
 #### `flex-shrink`
 
-The `flex-shrink` determines how much an element in a flex container will
+The `flex-shrink` property determines how much an element in a flex container will
 shrink; the larger the number, the more the element will shrink in relation to
 other elements in the container, with the default set to `1`. To see this in
 action, let's go back to our the first flex container where `<header>`,
