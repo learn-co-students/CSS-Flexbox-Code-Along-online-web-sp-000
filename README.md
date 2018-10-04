@@ -139,7 +139,7 @@ the following:
 ```
 main {
   display: flex;
-  background-color: white;
+  background-color: #FBFFF4;
   width: 100%;
   height: 100%;
 }
