@@ -14,10 +14,34 @@ main {
   background-color: #92C9D5;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-flow: row-reverse wrap;
 }
 
 footer {
   background-color: #DAEEEF;
   height: 100%;
   width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column wrap;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  align-self: center;
+}
+
+
+.item {
+  margin: 5px;
+  background-color: #FCF2EC;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
 }
