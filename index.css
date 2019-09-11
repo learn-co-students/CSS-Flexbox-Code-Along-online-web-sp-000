@@ -5,19 +5,48 @@ body {
 }
 
 header {
-  background-color: #FBFFF4;
-  height: 100%;
+  background-color: rgb(186, 231, 252);
+  height: 80px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 main {
-  background-color: #92C9D5;
+  display:flex;
+  background-color: rgb(82, 112, 165);
   width: 100%;
   height: 100%;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items:baseline;
 }
 
 footer {
-  background-color: #DAEEEF;
-  height: 100%;
+  background-color: rgb(255, 228, 179);
+  height: 80px;
   width: 100%;
+  flex-shrink: 3;
+}
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+  flex-direction: column;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: #FCF2EC;
+}
+
+.setWidth {
+  flex-basis: 100px;
+  flex-grow: 1;
+}
+
+.new {
+  align-self:flex-end;
 }
