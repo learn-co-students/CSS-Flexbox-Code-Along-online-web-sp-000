@@ -21,3 +21,43 @@ footer {
   height: 100%;
   width: 100%;
 }
+
+main {
+  display:flex;
+  /*flex-wrap: wrap; defines how items in a flex container handle positioning when there are too many items to fit the space*/
+  /*flex-direction: column;*/
+  flex-flow: row wrap;/*replace flex-direction and flex-wrap*/
+  /*flex-flow property takes in two settings, the first for direction and the second for wrapping. If you only include one setting, the other will be set to its default, row or nowrap*/
+  justify-content: center; /*define where items start and end, and how they are spaced in between*/
+  align-items: center; /*centered vertically within our <main> containe*/
+  background-color: #92C9D5;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  flex-shrink: 3;
+  background-color: #DAEEEF;
+  height: 80px;/*footers usually contain static links and information, so we will set the height property in the header and footer CSS blocks to 80px*/
+  width: 100%;
+}
+
+.flex-container {
+  display: flex; /* apply flexbox*/
+  width: 100vw; /*set width and height to the full size of the window using 100vw, and 100vh*/
+  height: 100vh;
+  flex-direction: column;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: #FCF2EC;
+}
+
+.setWidth {
+  flex-basis: 100px;
+  flex-grow: 1;
+}
+
