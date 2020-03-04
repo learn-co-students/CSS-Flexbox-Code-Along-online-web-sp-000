@@ -5,8 +5,9 @@ body {
 }
 
 header {
+  display: flex;
   background-color: #FBFFF4;
-  height: 100%;
+  height: 10%;
   width: 100%;
 }
 
@@ -14,6 +15,19 @@ main {
   background-color: #92C9D5;
   width: 100%;
   height: 100%;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: #FCF2EC;
+}
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 
 footer {
