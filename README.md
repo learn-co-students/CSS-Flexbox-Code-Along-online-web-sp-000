@@ -1,5 +1,7 @@
-# Building a Responsive Layout with CSS Flexbox 
-## Problem Statement 
+# Building a Responsive Layout with CSS Flexbox
+
+## Problem Statement
+
 Using CSS to create a website that looks good to as many users as possible can
 be a challenge. Your webpage may look great on the screen you designed it on,
 but if you open the page up on a small laptop, suddenly the page content is
@@ -24,6 +26,7 @@ in-browser Learn IDE, or by right clicking the `index.html` in Finder and
 opening it in a browser.
 
 ## Objectives
+
 1. Setting up a Flex Container
 2. Identify and Use Flex Properties
 
@@ -43,7 +46,7 @@ flex` as a property here and set a width and height of the container. We can
 also set width and height to the full size of the window using `100vw`, and
 `100vh`, so our CSS block will look like this:
 
-```
+```css
 .flex-container {
   display: flex;
   width: 100vw;
@@ -52,6 +55,7 @@ also set width and height to the full size of the window using `100vw`, and
 ```
 
 ## Identify and Use Flex Properties
+
 Save `index.css` and check out `index.html` in your browser. Cool! We're taking
 some inspiration from nature today, and going with colors that look like you're
 oceanside. Looks like we're on our way! If you inspect the page, you'll see that
@@ -66,18 +70,18 @@ However, we've got a small issue--it doesn't make much sense to have a
 and bottom of our page. We'll need to add one more line of CSS for this using
 `flex-direction`.
 
-#### `flex-direction`
+### `flex-direction`
 
 By default, flexbox will display content horizontally. If we want to change
 this, we'll need to define a direction. In `index.css`, add the following line
-to `.flex-container`: 
+to `.flex-container`:
 
-```
+```css
 flex-direction: column;
 ```
 
 Refresh `index.html` to see the change. This time, our ivory `<header>` appears
-along the top of our page, with `<footer>` at the bottom! 
+along the top of our page, with `<footer>` at the bottom!
 
 The `flex-direction` property has a few setting options:
 
@@ -116,13 +120,13 @@ container_, applying to all of its children.
 Now that we've set up a basic layout using flexbox, we can go deeper into some
 of its cool properties.
 
-#### `flex-wrap`
+### `flex-wrap`
 
 Let's display a series of items in the `<main>` section of our page. Make six
 `<div>` elements inside of `<main>` and assign them a class name 'item', adding
 the number 1 through 6 in them, like so:
 
-```
+```html
 <div class="item">1</div>
 <div class="item">2</div>
 <div class="item">3</div>
@@ -136,7 +140,7 @@ In our CSS file, define a block for `.item` with `height` and `width` set to
 the `main` CSS block, set `display` to `flex`. The two classes should look like
 the following:
 
-```
+```css
 main {
   display: flex;
   background-color: #FBFFF4;
@@ -156,7 +160,7 @@ If you refresh, you should see six pink boxes horizontally aligned. If you reduc
 the width of your browser window, these boxes will evenly shrink to fit. Go back
 into `index.css`, and in `.main`, add the following line:
 
-```
+```css
 flex-wrap: wrap;
 ```
 
@@ -181,7 +185,7 @@ defined. These two properties often go hand in hand, so CSS provides a shorthand
 property that defines both in one line: `flex-flow`. To implement this, in
 the block `main`, replace `flex-direction` and `flex-wrap` with the following:
 
-```
+```css
 flex-flow: column wrap;
 ```
 
@@ -202,7 +206,7 @@ items positioned in more detail. The first property we will look at is
 `justify-content`, which will define where items start and end, and how they are
 spaced in between. In the `main` CSS block, add:
 
-```
+```css
 justify-content: center;
 ```
 
@@ -215,9 +219,9 @@ set up in short order.
 The `justify-content` property has a number of settings:
 
 * `center` - centers all elements while preserving the original spacing in-between
-each of them. 
+each of them.
 * `flex-start` - aligns all elements to the beginning of the container. This is
-the default setting, so we've actually already seen what this looks like. 
+the default setting, so we've actually already seen what this looks like.
 * `flex-end` - aligns all elements to the end of the flex container. If you apply
 this setting, our pink boxes will align to the right side of the screen.
 However, if the page shrinks, the last flex elements will still wrap to the next
@@ -240,8 +244,9 @@ same way, _only vertically_, so `justify-content` will apply based on the
 Centering vertically is actually fairly non-intuitive using basic CSS. Flexbox
 provides a solution, though, in the `align-items` property. In the `main` CSS
 block, make sure `flex-flow` is set to `row wrap` once again, and then add the
-following line: 
-```
+following line:
+
+```css
 align-items: center;
 ```
 
@@ -264,9 +269,9 @@ settings:
 * `baseline` - aligns elements based on the _text_ baseline inside each element. If you tried out the `stretch` setting, make sure your `flex-direction` is set back to `row` and that both `height` and `width` are set to `100px` in the `.item` CSS block. Now, set `align-items` to `baseline`, go to your `index.html` file and remove some of the numbers that are contained in our divs, leaving a few. Save both the HTML and CSS, and check out the page in your browser. Any div that is now empty is aligned normally, but any div that still has text in it will align _based on the bottom of the text_.
 
 To perfectly center an element horizontally and vertically, with flex, we can
-use a combination of both `justify-content` and `align-items` like so: 
+use a combination of both `justify-content` and `align-items` like so:
 
-```
+```css
 justify-content: center;
 align-items: center;
 ```
@@ -330,7 +335,7 @@ create a variety of layouts. For instance, let's create a new CSS class,
 `setWidth`, with `flex-basis` set to `100px`, and `flex-grow` set to `1`, like
 so:
 
-```
+```css
 .setWidth {
   flex-basis: 100px;
   flex-grow: 1;
@@ -369,6 +374,7 @@ as much as normal.
 #### `flex`
 
 Using `flex-grow`, `flex-shrink`, and `flex-basis` in combination allows us to:
+
 1. Set how much that element expands to fill space
 2. Set how much the element will shrink to fit
 3. Set how large the item is to start
@@ -377,7 +383,7 @@ These three settings tend to go together, and because of this, CSS has provided
 a shorthand alternative to set all three: `flex`. The `flex` attribute can take
 three settings:
 
-```
+```css
 flex: <flex-grow value> <flex-shrink value> <flex-basis value>
 ```
 
