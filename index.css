@@ -5,19 +5,42 @@ body {
 }
 
 header {
-  background-color: #FBFFF4;
+  background-color: #fbfff4;
   height: 100%;
   width: 100%;
 }
 
 main {
-  background-color: #92C9D5;
+  background-color: #92c9d5;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
 }
 
 footer {
-  background-color: #DAEEEF;
+  background-color: #daeeef;
   height: 100%;
   width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: columnj;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: #fcf2ec;
+}
+
+.setWidth {
+  flex-basis: 100px;
+  flex-grow: 1;
 }
