@@ -21,3 +21,35 @@ footer {
   height: 100%;
   width: 100%;
 }
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-flow: column wrap;
+}
+
+main {
+  display: flex;
+  background-color: #FBFFF4;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+}
+ 
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  justify-content: center;
+align-items: center;
+  background-color: #FCF2EC;
+}
+
+.setWidth {
+  flex-basis: 100px;
+  flex-grow: 1;
+  flex: <flex-grow value> <flex-shrink value> <flex-basis value>
+}
