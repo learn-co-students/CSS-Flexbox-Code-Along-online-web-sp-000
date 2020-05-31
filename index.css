@@ -5,19 +5,46 @@ body {
 }
 
 header {
+  flex-shrink: 0;
   background-color: #FBFFF4;
-  height: 100%;
+  height: 80px;
   width: 100%;
 }
 
 main {
+  display: flex;
+  flex-flow: column wrap; /*flex-direction: column;; flex-wrap: wrap;*/
+  justify-content: center; /*center, flex-start, flex-end, space-around, space-between*/
+  align-items: center; /*flex-start, flex-end, stretch, baseline*/
+  align-content: center; /*stretch, space-around, space-between, flex-start, flex-end*/
+  flex-basis: 100px; /*--%, content*/
   background-color: #92C9D5;
   width: 100%;
   height: 100%;
 }
 
+.setWidth {
+  flex-basis: 10px;
+  flex-grow: 1;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: #FCF2EC;
+}
+
 footer {
+  flex-shrink: 3;
   background-color: #DAEEEF;
-  height: 100%;
+  height: 80px;
   width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column; /*row, column, row-reverse, column-reverse*/
+  width: 100vw;
+  height: 100vh;
 }
