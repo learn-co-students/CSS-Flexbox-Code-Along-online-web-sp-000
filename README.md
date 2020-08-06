@@ -28,7 +28,7 @@ opening it in a browser.
 2. Identify and Use Flex Properties
 
 ## Setting Up a Flex Container
-
+##
 In order to use flexbox properties, we must first define a container where we
 want flexbox to apply. In `index.html`, we've already defined some HTML in the
 `<body>`: a `<div>` element with a class of 'flex-container' that has three child
