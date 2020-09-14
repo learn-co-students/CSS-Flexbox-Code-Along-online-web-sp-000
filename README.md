@@ -105,7 +105,7 @@ height. Similarly, footers usually contain static links and information, so we w
 set the height property in the `header` and `footer` CSS blocks to `80px`.
 
 Refresh the page and you'll see the effect: The `<main>` section will display as
-turqoise and tke up the majority of the page. If you shrink the height of your browser
+turquoise and take up the majority of the page. If you shrink the height of your browser
 window, the height of `<main>` will change significantly. Our `<header>` and
 `<footer>` sections will still adjust in height a little, but we'll take a look
 at preventing that later on. Previously, to create this sort of layout, we would
@@ -133,13 +133,13 @@ the number 1 through 6 in them, like so:
 
 In our CSS file, define a block for `.item` with `height` and `width` set to
 `100px`, `margin` set to `5px`, and `background-color` set to `#FCF2EC`. Now, in
-the `main` CSS block, set `display` to `flex`. The two classes should look like
+the `main` CSS block, set `display` to `flex`. The two blocks should look like
 the following:
 
 ```
 main {
   display: flex;
-  background-color: #FBFFF4;
+  background-color: #92C9D5;
   width: 100%;
   height: 100%;
 }
@@ -154,7 +154,7 @@ main {
 
 If you refresh, you should see six pink boxes horizontally aligned. If you reduce
 the width of your browser window, these boxes will evenly shrink to fit. Go back
-into `index.css`, and in `.main`, add the following line:
+into `index.css`, and in `main`, add the following line:
 
 ```
 flex-wrap: wrap;
