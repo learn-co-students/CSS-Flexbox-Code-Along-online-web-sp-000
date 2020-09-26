@@ -6,18 +6,51 @@ body {
 
 header {
   background-color: #FBFFF4;
-  height: 100%;
+  height: 80px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 main {
+  display: flex;
+  flex-flow: row wrap; /*this is the same as "flex-direction: column/row;" and "flex-wrap: wrap/nonwrap;" Also, the default value to flex-flow is "row nonwrap", so not putting one and/or the other will result in the default. */
+  align-items: center;
+  align-content: center;
   background-color: #92C9D5;
   width: 100%;
   height: 100%;
+  justify-content: center;
 }
 
 footer {
   background-color: #DAEEEF;
-  height: 100%;
+  height: 80px;
   width: 100%;
+  flex-shrink: 3;
+}
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  flex-basis: 100px;
+  margin: 5px;
+  background-color: #FCF2EC;
+}
+
+.setWidth {
+  flex-basis: 100px;
+  flex-grow: 1;
+}
+
+.align-self {
+  align-self: flex-start;
+  height: 20px;
+  background-color: red;
 }
