@@ -1,23 +1,54 @@
 html,
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 header {
-  background-color: #FBFFF4;
-  height: 100%;
-  width: 100%;
+	background-color: #fbfff4;
+	height: 80px;
+	width: 100%;
+	flex-shrink: 0; /* stops element from shrinking to fit */
 }
 
 main {
-  background-color: #92C9D5;
-  width: 100%;
-  height: 100%;
+	background-color: #92c9d5;
+	width: 100%;
+	height: 100%;
+	display: flex; /* if viewport resized, contents within main will resize in response */
+	/* flex-wrap: wrap; if viewport resized, contents will retain fixed dimensions but 'wrap' (move around the screen) to accomodate viewport size */
+	flex-flow: wrap; /* (this line defines flex direction and flow in shorthand; if one not specified, other defaults) */
+	justify-content: center; /* justify-content defines where items start and end, and how they are spaced in between*/
+	align-items: center; /* center vertically ( arranges items perpendicular to flex-direction)*/
 }
 
 footer {
-  background-color: #DAEEEF;
-  height: 100%;
-  width: 100%;
+	background-color: #daeeef;
+	height: 80px;
+	width: 100%;
+	flex-shrink: 3; /* determines how much an element in a flex container will shrink relative to other elements in container */
 }
+
+.flex-container {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column; /* top to bottom */
+	/* flexbox automatically displays horizontally; use flex-direction property */
+}
+
+.item {
+	height: 100px;
+	width: 100px;
+	margin: 5px;
+	background-color: #fcf2ec;
+}
+
+.setWidth {
+	flex-basis: 100px;
+	flex-grow: 1;
+}
+
+/* header and footer set to static heights because they contain information that is static and we want to display at a consistent / fixed size */
+
+/* CSS shorthand for flex => flex: <flex-grow value> <flex-shrink value> <flex-basis value> */
