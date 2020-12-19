@@ -6,18 +6,43 @@ body {
 
 header {
   background-color: #FBFFF4;
-  height: 100%;
+  height: 80px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 main {
+  display: flex;
   background-color: #92C9D5;
   width: 100%;
   height: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;1
 }
 
 footer {
   background-color: #DAEEEF;
-  height: 100%;
+  height: 80px;
   width: 100%;
+  flex-shrink: 3;
+}
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.item {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: #f3c5e0;
+}
+
+.setWidth {
+  flex-basis: 100px;
+  flex-grow: 1;
 }
