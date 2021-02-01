@@ -8,6 +8,7 @@ header {
   background-color: #FBFFF4;
   height: 80px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 main {
@@ -20,12 +21,14 @@ main {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  align-content: space-between;
 }
 
 footer {
   background-color: #DAEEEF;
   height: 80px;
   width: 100%;
+  flex-shrink: 3;
 }
 .flex-container {
   display: flex;
@@ -34,8 +37,16 @@ footer {
   flex-direction: column;
 }
 main .item {
-  width: 100px;
+  /* width: 100px; */
   height: 100px;
   margin: 5px;
   background-color: #FCF2EC;
+  /* flex-grow: 1; */
+}
+.setWidth {
+  /* flex-basis: 100px; */
+  flex-grow: 1;
+}
+.alignSelf {
+  align-self: flex-end;
 }
