@@ -21,3 +21,6 @@ footer {
   height: 100%;
   width: 100%;
 }
+.flex_container {display: flex;
+width:100vw;
+height: 100vh;}
